@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script>
+            function validateForm() {
+                var x = document.forms["myForm"]["fname"].value;
+                var y = document.forms["myForm"]["fpass"].value;
+                if ((x == null || x == "") || (y == null || y == "")) {
+                    alert("Name and Password must be filled out");
+                    return false;
+                }
+            }
+            function validateEmail()
+            {
+                var x = document.forms["myForm"]["eml"].value;
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (!re.test(x))
+                {
+                    alert("email is invalid");
+                }
+                else {
+
+                    alert("email is valid");
+
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+
+            <form name="myForm" action="demo_form.asp">
+                <div>
+                    <strong>  
+                        <h1>
+                            <fontsize ="6"><center>WorkShop Registration</font></center>
+                        </h1>
+
+                        <p>
+                        <fontsize="5" color="blue">
+                            <center>
+                                <img src="kec.jpg" alt="kec logo">
+                            </center>
+                            <center><h3>
+                                    Register Now While Seats Are Available!</h3> </center>
+                           
+                            </p>
+                    </strong>
+                </div>
+                <div>
+                    <img src="student.jpg" alt="student" style="float:right" height="150" width="150">
+                    <br><strong>Name:</strong> <input type="text" name="Name" name="firstname"value="Enter the First name here"size="30"maxlengh="20" align="right|center"><br>
+                    <div>
+                        <h5>
+                            <br><strong>Email:</strong><input type="email" name ="eml" value="Enter Your Email "size="30"maxlengh="20" align="right|center" > 
+                            <input type="submit"  class="btn btn-info"value="Email check" onclick=" validateEmail()"><br>
+
+                        </h5>
+                    </div>
+                    <br><strong>Password:</strong><input type= "password" name ="fpass" value="Enter Password"size="30"maxlengh="20" align="right|center"><br>
+                    <br><p><strong> Gender:</strong>
+                        <br><strong> Male:</strong><input type = "checkbox" name="male">
+                        <strong>Female:</strong> <input type = "checkbox" name="female"><br>
+                    </p>
+
+                    <p><strong>Status:</strong>
+                        <br><strong> Student:</strong><input type = "checkbox" name="std">
+                        <strong>Employee:</strong> <input type = "checkbox" name="emp">
+                        <strong>Unemployed:</strong><input type = "checkbox" name = "unemp"><br>
+                    </p>
+
+
+                    <input type="submit" class="btn btn-success" value="Submit" onclick="validateForm()">
+                    <input type="button" class="btn btn-primary"  value="Reset Form" onClick="this.form.reset()" />
+            </form>
+
+        </div>
+    <center> <button type="submit" class="btn btn-success">Contact Us</button></center>
+
+</div>
+</body>
+</html>
